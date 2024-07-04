@@ -1,0 +1,6 @@
+{
+  "status": 400,
+  "date": "2024-05-12T02:08:07.5913056",
+  "message": "Champ = title. Cause = must not be blank",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}

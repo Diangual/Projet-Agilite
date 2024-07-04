@@ -1,0 +1,6 @@
+{
+  "status": 500,
+  "date": "2024-05-12T02:06:21.0258773",
+  "message": "JSON parse error: Unexpected character (',' (code 44)): expected a value",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}
