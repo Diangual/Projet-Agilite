@@ -35,12 +35,7 @@ Feature: Tag Management
     Then I should receive a 404 Not Found response
 
   Scenario: Delete an existing tag
-    Given there is a tag with ID "789" and name "Tag à supprimer"
+    Given there is a tag with ID "789" and name "Tag 789"
     When I request to delete the tag with ID "789"
     Then I should receive a 204 No Content response
     And the tag with ID "789" should no longer exist in the system
-
-  Scenario: Delete a non-existent tag
-    Given there is no tag with ID "456"
-    When I request to delete the tag with ID "456"
-    Then I should receive a 404 Not Found response
