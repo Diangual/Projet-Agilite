@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef4f39f6-c6ad-4895-8292-4c31d2fcfed5" name="Changes" comment="ajout travaux pratiques" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Public Environment File" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="pipeline condif" />
+        <option name="rewordedMessage" value="pipeline config" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="23fbd3fa5ce4537077d156cbba0596ac60f4dccb" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" environment="local" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2drUyQfM3KZEkNDvuWuJrT35WJT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "isene",
+    "last_opened_file_path": "C:/Users/Hopuser/Documents/ept/projet-todos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "349d34ca49da03a26a399f5feb25c5a9",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hopuser\Documents\ept\poc-todos\ignore" />
+      <recent name="C:\Users\Hopuser\Documents\ept\poc-todos\.github\workflows" />
+      <recent name="C:\Users\Hopuser\Documents\ept\poc-todos" />
+      <recent name="C:\Users\Hopuser\Documents\ept\todos" />
+      <recent name="C:\Users\Hopuser\Documents\ept\todos\collectios" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hopuser\Documents\ept\poc-todos\ignore" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="sn.ept.git.seminaire.poc.demo" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="sn.ept.git.seminaire.poc.demo.tp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="sn.ept.git.seminaire.poc.demo.tp" />
+      <recent name="sn.ept.git.seminaire.poc.demo" />
+      <recent name="sn.ept.git.seminaire.cicd.demo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TodoApplication">
+    <configuration name="add-todo | Request to add todo - 200" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/collectios/add-todo.http" requestIdentifier="Request to add todo - 200" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="find-all | Request to find all todo - default query params- 200" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/collectios/find-all.http" requestIdentifier="Request to find all todo - default query params- 200" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="TodoExceptionHandlerTest.violation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="todos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sn.ept.git.seminaire.cicd.handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sn.ept.git.seminaire.cicd.handler" />
+      <option name="MAIN_CLASS_NAME" value="sn.ept.git.seminaire.cicd.handler.TodoExceptionHandlerTest" />
+      <option name="METHOD_NAME" value="violation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceTest.saveShouldSaveTodo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="todos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sn.ept.git.seminaire.cicd.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sn.ept.git.seminaire.cicd.services" />
+      <option name="MAIN_CLASS_NAME" value="sn.ept.git.seminaire.cicd.services.TodoServiceTest" />
+      <option name="METHOD_NAME" value="saveShouldSaveTodo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceTest.saveWithExistingTitleShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="todos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sn.ept.git.seminaire.cicd.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sn.ept.git.seminaire.cicd.services" />
+      <option name="MAIN_CLASS_NAME" value="sn.ept.git.seminaire.cicd.services.TodoServiceTest" />
+      <option name="METHOD_NAME" value="saveWithExistingTitleShouldThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="todos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sn.ept.git.seminaire.cicd.TodoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TodoServiceTest.saveWithExistingTitleShouldThrowException" />
+        <item itemvalue="JUnit.TodoServiceTest.saveShouldSaveTodo" />
+        <item itemvalue="JUnit.TodoExceptionHandlerTest.violation" />
+        <item itemvalue="HTTP Request.find-all | Request to find all todo - default query params- 200" />
+        <item itemvalue="HTTP Request.add-todo | Request to add todo - 200" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef4f39f6-c6ad-4895-8292-4c31d2fcfed5" name="Changes" comment="" />
+      <created>1710765946008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710765946008</updated>
+      <workItem from="1710765948323" duration="27379000" />
+      <workItem from="1712281439403" duration="389000" />
+      <workItem from="1712281993760" duration="2180000" />
+      <workItem from="1713010536426" duration="1192000" />
+      <workItem from="1714831006872" duration="3709000" />
+      <workItem from="1715211405640" duration="6998000" />
+      <workItem from="1715258584211" duration="1438000" />
+      <workItem from="1715263564061" duration="45948000" />
+      <workItem from="1715445079031" duration="15622000" />
+      <workItem from="1716645909367" duration="701000" />
+      <workItem from="1716647331124" duration="15025000" />
+      <workItem from="1717244627821" duration="22081000" />
+      <workItem from="1717771549428" duration="60112000" />
+      <workItem from="1719154739964" duration="242000" />
+      <workItem from="1719155266413" duration="784000" />
+    </task>
+    <task id="LOCAL-00018" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1715278158213</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715278158213</updated>
+    </task>
+    <task id="LOCAL-00019" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715284268863</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715284268863</updated>
+    </task>
+    <task id="LOCAL-00020" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715284300777</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715284300777</updated>
+    </task>
+    <task id="LOCAL-00021" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715286265505</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715286265505</updated>
+    </task>
+    <task id="LOCAL-00022" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715286612337</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715286612337</updated>
+    </task>
+    <task id="LOCAL-00023" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715375925232</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715375925232</updated>
+    </task>
+    <task id="LOCAL-00024" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715377452552</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715377452552</updated>
+    </task>
+    <task id="LOCAL-00025" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715380360296</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715380360296</updated>
+    </task>
+    <task id="LOCAL-00026" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715384448890</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715384448890</updated>
+    </task>
+    <task id="LOCAL-00027" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1715479787685</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715479787685</updated>
+    </task>
+    <task id="LOCAL-00028" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1716640022168</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716640022168</updated>
+    </task>
+    <task id="LOCAL-00029" summary="sonar config">
+      <option name="closed" value="true" />
+      <created>1717430807964</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1717430807964</updated>
+    </task>
+    <task id="LOCAL-00030" summary="initial config">
+      <option name="closed" value="true" />
+      <created>1717790910913</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717790910913</updated>
+    </task>
+    <task id="LOCAL-00031" summary="initial config">
+      <option name="closed" value="true" />
+      <created>1717791312441</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717791312441</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix complete URI">
+      <option name="closed" value="true" />
+      <created>1717793796017</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717793796017</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix complete URI">
+      <option name="closed" value="true" />
+      <created>1717809408855</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717809408855</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717809423964</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1717809423964</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717809832150</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1717809832150</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717809952913</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1717809952913</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717811038141</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1717811038141</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717811915387</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717811915387</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717812054042</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1717812054042</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717812337253</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717812337253</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717813052302</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1717813052302</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717813689531</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1717813689531</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717814973588</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1717814973588</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717815104810</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1717815104810</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717815753788</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1717815753788</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717815869608</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1717815869608</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717815907969</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1717815907969</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717816335355</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1717816335355</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717816479249</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1717816479249</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717816618682</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1717816618684</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717817619898</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1717817619898</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717818231598</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1717818231598</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717819417694</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1717819417694</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717819958463</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1717819958463</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717820087944</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820087945</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717820378587</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820378587</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717820603107</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820603107</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717820623382</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820623382</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717820775194</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1717820775194</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Sonar config">
+      <option name="closed" value="true" />
+      <created>1717821421274</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1717821421274</updated>
+    </task>
+    <task id="LOCAL-00061" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717825347873</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1717825347873</updated>
+    </task>
+    <task id="LOCAL-00062" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717856785857</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1717856785857</updated>
+    </task>
+    <task id="LOCAL-00063" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717866179325</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1717866179325</updated>
+    </task>
+    <task id="LOCAL-00064" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717866730974</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1717866730974</updated>
+    </task>
+    <task id="LOCAL-00065" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717867392015</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1717867392015</updated>
+    </task>
+    <task id="LOCAL-00066" summary="ajout travaux pratiques">
+      <option name="closed" value="true" />
+      <created>1717870387447</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1717870387447</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add depenecies scan in pipeline" />
+    <MESSAGE value="add pull request pipeline" />
+    <MESSAGE value="add banner text" />
+    <MESSAGE value="build main pipepline" />
+    <MESSAGE value="disabled pipepline" />
+    <MESSAGE value="refactoring" />
+    <MESSAGE value="sonar config" />
+    <MESSAGE value="initial config" />
+    <MESSAGE value="fix complete URI" />
+    <MESSAGE value="Sonar config" />
+    <MESSAGE value="ajout travaux pratiques" />
+    <MESSAGE value="pipeline condif" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout travaux pratiques" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/sn/ept/git/seminaire/poc/demo/ACalculatorTest.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/sn/ept/git/seminaire/cicd/resources/TodoResource.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/poc_todos$TodoExceptionHandlerTest.ic" NAME="TodoExceptionHandlerTest Coverage Results" MODIFIED="1717791119461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sn.ept.git.seminaire.cicd.handler.*</FILTER>
+    </SUITE>
+  </component>
+</project>

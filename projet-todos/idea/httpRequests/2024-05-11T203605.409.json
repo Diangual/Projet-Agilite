@@ -1,0 +1,6 @@
+{
+  "status": 409,
+  "date": "2024-05-12T00:36:05.417412",
+  "message": "Le titre  <title 5>  existe déjà ",
+  "url": "uri=/cicd/api/todos"
+}

@@ -1,0 +1,6 @@
+{
+  "status": 400,
+  "date": "2024-05-12T01:54:29.112351",
+  "message": "Champ en erreur = title. Cause.s = size must be between 2 and 80, Champ en erreur = description. Cause.s = size must be between 0 and 255",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}

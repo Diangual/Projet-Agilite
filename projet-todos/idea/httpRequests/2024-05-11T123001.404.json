@@ -1,0 +1,6 @@
+{
+  "status": 404,
+  "date": "2024-05-11T16:30:01.6564653",
+  "message": "Impossible de retrouver  une todo avec l'identifiant 98486688-5670-4f5b-a4e9-94570b0230eb",
+  "url": "uri=/cicd/api/todos/98486688-5670-4f5b-a4e9-94570b0230eb/complete"
+}
