@@ -1,0 +1,6 @@
+{
+  "status": 400,
+  "date": "2024-05-12T01:07:20.4208128",
+  "message": "Validation failed for argument [0] in public org.springframework.http.ResponseEntity<sn.ept.git.seminaire.cicd.models.TodoDTO> sn.ept.git.seminaire.cicd.resources.TodoResource.create(sn.ept.git.seminaire.cicd.models.TodoDTO): [Field error in object 'todoDTO' on field 'title': rejected value [t]; codes [Size.todoDTO.title,Size.title,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [todoDTO.title,title]; arguments []; default message [title],80,2]; default message [size must be between 2 and 80]] ",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}

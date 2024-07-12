@@ -1,0 +1,6 @@
+{
+  "status": 400,
+  "date": "2024-05-12T01:38:22.9136626",
+  "message": "title:size must be between 2 and 80",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}

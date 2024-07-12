@@ -1,0 +1,6 @@
+{
+  "status": 500,
+  "date": "2024-05-23T01:15:30.6715492",
+  "message": "could not prepare statement [Table \"ACICD_TODOS\" not found (this database is empty); SQL statement:\nselect t1_0.id,t1_0.completed,t1_0.created_date,t1_0.description,t1_0.last_modified_date,t1_0.title,t1_0.version from acicd_todos t1_0 where t1_0.title=? [42104-224]] [select t1_0.id,t1_0.completed,t1_0.created_date,t1_0.description,t1_0.last_modified_date,t1_0.title,t1_0.version from acicd_todos t1_0 where t1_0.title=?]; SQL [select t1_0.id,t1_0.completed,t1_0.created_date,t1_0.description,t1_0.last_modified_date,t1_0.title,t1_0.version from acicd_todos t1_0 where t1_0.title=?]",
+  "url": "uri=/cicd/api/todos;client=127.0.0.1"
+}

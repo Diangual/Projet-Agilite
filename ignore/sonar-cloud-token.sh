@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Dsonar.organization=diangual -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=a44eef96877fef1964cc333edaa642da1c64850ad5ef4e -Dsonar.projectKey=Diangual_Projet-Agilite -Pgating
