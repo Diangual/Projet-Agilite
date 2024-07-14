@@ -1,0 +1,123 @@
+name: Build-Analyze-Deliver-Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up  JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'zulu'
+
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Dependencies Scan
+        #if: 1>2
+        run: mvn clean verify -DskipTests -Pcve
+
+      - name: Unit Testing
+        run: mvn test -Put
+
+      - name: Integration Testing
+        run: mvn test -Pit
+
+      - name: jacoco-reporter
+  # You may pin to the exact commit or the version.
+  # uses: PavanMudigonda/jacoco-reporter@4fc6bf270fe893e8dda5467e432253a6961345b8
+        uses: PavanMudigonda/jacoco-reporter@v5.0
+        with:
+    # Path to the JaCoCo coverage results file which will be used to generate a report. The only coverage results format supported is the JaCoCo XML schema.
+
+            coverage_results_path: normal
+    # Optionally specify the level of output detail for the test results. May be one of: `none`, `Minimal`, `normal`, `detailed`, `diagnostic` The default is `normal`.
+            output_level: # optional
+    # GITHUB_TOKEN to authenticate against API calls to attach report to Workflow Run.
+
+            github_token: ${{github.token}}
+    # If true, will skip attaching the Tests Result report to the Workflow Run using a Check Run.  Useful if you just want to produce a Gist-based report via the `gist_name`and `gist_token` input parameters.
+
+            skip_check_run: # optional
+    # Comma-separated list of one or more directories to scan for code coverage, relative to the root of the project. Will include all .ps1 and .psm1 files under these directories recursively.
+
+            coverage_paths: ${project.basedir}/../target/site/jacoco-aggregate/jacoco.xml
+    # The name of the code coverage report object that will be attached to the Workflow Run.  Defaults to the name `COVERAGE_RESULTS_<datetime>` where `<datetime>` is in the form `yyyyMMdd_hhmmss`.
+
+            coverage_report_name: # optional
+    # The title of the code coverage report that will be embedded in the report itself, which defaults to the same as the `code_coverage_report_name` input.
+
+            coverage_report_title: # optional
+    # Minimum allowed coverage percentage as an integer.
+            minimum_coverage: 100%
+    # Fail the action when the minimum coverage was not met.
+            fail_below_threshold: # optional
+    # If true, will skip attaching the Tests Result report to the Workflow Run using a Check Run. Useful if your report has 65k characters that is not accepted by Github REST and GraphQL APIs
+
+            publish_only_summary: # optional
+          
+
+      - name: Quality Gate
+        #votre travail
+        #adapter : peut utiliser sonarcloud ou une instance distante
+        run: mvn clean verify sonar:sonar -Dsonar.organization=diangual -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=${{ secrets.SONAR_TOKEN }} -Dsonar.projectKey=Diangual_Projet-Agilite
+
+      - name: Check Quality Gate
+        #votre travail
+        #verifier si la Quality Gate is ok
+        run: echo "Checking quality gate ... "
+
+      - name: Package
+        run: mvn -B package  -DskipTests=true
+
+      - name: Login to Docker
+        #votre travail
+        #les trois prochaines etapes peuven etre fusionnees en une seule, le decoupe est volontaire pour plus de comprehension
+        run: |
+          docker login -u=${{secrets.DOCKER_USERNAME}} -p=${{ secrets.DOCKER_TOKEN}} docker.io
+
+      - name: Build Docker image
+        run: |
+          docker build -t  ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REGISTRY_IMAGE }}:${{ github.sha }} -t  ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REGISTRY_IMAGE }}:latest  .   
+
+      - name: Publish Docker image versions
+        run: |
+          docker push --all-tags  ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_REGISTRY_IMAGE }}
+
+      - name: Deploy to Dev
+        #votre travail
+        #se connecter a un serveur distant et deployer l'image docker que vous venez de builder
+        run: echo " 1) Login to my remote server ...\n 2) Stop docker container if running ... \n 3) Pull latest version and run it ... "
+
+      - name: Wait for deploy to finish
+        #votre travail
+        run: echo "Wait 30s ... "
+
+      - name: Check deploy
+        #verifier si le deploiement s'est bien passe
+        #votre travail
+        run: echo " 1) Run Get request <my_server_ip:my_port/cicd/_health> to check if service is running ...\n 2) Get request should return 200 with content <Welcome to my Todo app> ..."
+
+
+
