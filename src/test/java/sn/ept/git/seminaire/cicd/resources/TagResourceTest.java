@@ -44,7 +44,7 @@ public class TagResourceTest {
         when(service.findAll()).thenReturn(TagDTOTestData.getList());
         mockMvc.perform(get(UrlMapping.Tag.ALL))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.*", hasSize(1));
+                .andExpect(jsonPath("$.*", hasSize(1)));
     }
 
     @Test

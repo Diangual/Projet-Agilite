@@ -11,7 +11,7 @@ import sn.ept.git.seminaire.cicd.models.TodoDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-08T20:46:46+0000",
+    date = "2024-07-15T10:13:11+0000",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.39.0.v20240620-1855, environment: Java 17.0.11 (Eclipse Adoptium)"
 )
 @Component
