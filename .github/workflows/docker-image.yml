@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        docker login --username Diangual --password ${{GHCR_PATH}} ghcr.io
+        docker build . --tag ghcr.io/diangual/projet-todos:latest
+        docker push ghcr.io/diangual/projet-todos:latest
