@@ -38,8 +38,8 @@ public class CucumberStepIT {
 
 
     public static final String COMPLETED = "completed";
-    private final String base_URL = "http://localhost";
-    public static final String API_PATH = "/cicd/api/todos";
+    private final String baseURL = "http://localhost";
+    public static final String APIPATH = "/cicd/api/todos";
     public static final String ID = "id";
     public static final String TITLE = "title";
     public static final String DESCRIPTION = "description";
@@ -63,7 +63,7 @@ public class CucumberStepIT {
         todoRepository.deleteAll();
     }
     protected RequestSpecification request() {
-        RestAssured.baseURI = base_URL;
+        RestAssured.baseURL = baseURL;
         RestAssured.port = port;
         return given()
                 .contentType(ContentType.JSON)
@@ -97,7 +97,7 @@ public class CucumberStepIT {
     @When("call find by id with id={string}")
     public void callFindByIdWithId(String id) {
         response = request()
-                .when().get(API_PATH+"/" +id);
+                .when().get(APIPATH+"/" +id);
     }
 
 
@@ -122,7 +122,7 @@ public class CucumberStepIT {
             response = request().contentType(ContentType.JSON)
                     .log()
                     .all()
-                    .when().get(API_PATH+String.format("?page=%d&size=%d&sort=%s",page,size,sort));
+                    .when().get(APIPATH+String.format("?page=%d&size=%d&sort=%s",page,size,sort));
 
     }
 
@@ -159,13 +159,13 @@ public class CucumberStepIT {
     @When("call delete with id={string}")
     public void callDeleteWithId(String id) {
         response = request()
-                .when().delete(API_PATH+"/"+id);
+                .when().delete(APIPATH+"/"+id);
     }
 
     @When("call complete with id={string}")
     public void callCompleteWithId(String id) {
         response = request()
-                .when().put(API_PATH+"/"+id+"/complete");
+                .when().put(APIPATH+"/"+id+"/complete");
     }
 
     @And("the completed todo has property completed={string}")
@@ -181,7 +181,7 @@ public class CucumberStepIT {
         TodoDTO requestBody =TodoDTO.builder().title(this.title).description(this.description).build();
         response = request()
                 .body(requestBody)
-                .when().post(API_PATH);
+                .when().post(APIPATH);
     }
 
 
@@ -200,7 +200,7 @@ public class CucumberStepIT {
         TodoDTO requestBody =TodoDTO.builder().title(this.title).description(this.description).build();
         response = request()
                 .body(requestBody)
-                .when().put(API_PATH+"/"+id);
+                .when().put(APIPATH+"/"+id);
     }
 
 
