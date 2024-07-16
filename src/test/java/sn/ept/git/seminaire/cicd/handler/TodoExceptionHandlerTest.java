@@ -147,7 +147,7 @@ class TodoExceptionHandlerTest {
     }
 
     private void verifyFormattedError(final ResponseEntity<ErrorModel> response, final HttpStatus httpStatus, final String message, final String description) {
-        Predicate<? super Object> messagePredicate = MSG -> MSG.toString().contains(message);
+        Predicate<? super Object> messagePredicate = msg -> MSG.toString().contains(message);
         Predicate<? super Object> datePredicate = date -> {
             LocalDateTime now = LocalDateTime.now(Clock.systemUTC());
             LocalDateTime errorDate = (LocalDateTime) date;
