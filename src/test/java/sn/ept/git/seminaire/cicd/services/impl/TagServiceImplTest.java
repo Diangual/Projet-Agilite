@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class TagServiceImplTest {
+class TagServiceImplTest {
 
     @Mock
     private TagRepository tagRepository;
@@ -55,7 +55,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void save_savesNewTag() {
+    void save_savesNewTag() {
         // Arrange
         when(tagRepository.findByName(tagDTO.getName())).thenReturn(Optional.empty());
         when(tagMapper.toEntity(any(TagDTO.class))).thenReturn(tag);
@@ -73,7 +73,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void save_throwsExceptionWhenTagExists() {
+    void save_throwsExceptionWhenTagExists() {
         // Arrange
         when(tagRepository.findByName(tagDTO.getName())).thenReturn(Optional.of(tag));
 
@@ -83,7 +83,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void delete_deletesExistingTag() {
+   void delete_deletesExistingTag() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.of(tag));
 
@@ -96,7 +96,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void delete_throwsExceptionWhenTagNotFound() {
+    void delete_throwsExceptionWhenTagNotFound() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.empty());
 
@@ -106,7 +106,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void findById_retrievesTagById() {
+    void findById_retrievesTagById() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.of(tag));
         when(tagMapper.toDTO(any(Tag.class))).thenReturn(tagDTO);
@@ -121,7 +121,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void findById_returnsEmptyWhenTagNotFound() {
+    void findById_returnsEmptyWhenTagNotFound() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.empty());
 
@@ -134,7 +134,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void findAll_returnsAllTags() {
+    void findAll_returnsAllTags() {
         // Arrange
         when(tagRepository.findAll()).thenReturn(List.of(tag));
         when(tagMapper.toDTO(any(Tag.class))).thenReturn(tagDTO);
@@ -150,7 +150,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void findAll_returnsEmptyListWhenNoTags() {
+    void findAll_returnsEmptyListWhenNoTags() {
         // Arrange
         when(tagRepository.findAll()).thenReturn(Collections.emptyList());
 
@@ -164,7 +164,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void findAll_withPageable_returnsPagedTags() {
+    void findAll_withPageable_returnsPagedTags() {
         // Arrange
         Pageable pageable = PageRequest.of(0, 10);
         Page<Tag> tagPage = new PageImpl<>(List.of(tag), pageable, 1);
@@ -182,7 +182,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void update_updatesExistingTag() {
+    void update_updatesExistingTag() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.of(tag));
         when(tagRepository.findByNameWithIdNotEquals(tagDTO.getName(), "1")).thenReturn(Optional.empty());
@@ -201,7 +201,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void update_throwsExceptionWhenTagNotFound() {
+    void update_throwsExceptionWhenTagNotFound() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.empty());
 
@@ -211,7 +211,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void update_throwsExceptionWhenTagWithSameNameExists() {
+    void update_throwsExceptionWhenTagWithSameNameExists() {
         // Arrange
         when(tagRepository.findById("1")).thenReturn(Optional.of(tag));
         when(tagRepository.findByNameWithIdNotEquals(tagDTO.getName(), "1")).thenReturn(Optional.of(tag));
@@ -223,7 +223,7 @@ public class TagServiceImplTest {
     }
 
     @Test
-    public void deleteAll_deletesAllTags() {
+    void deleteAll_deletesAllTags() {
         // Act
         tagService.deleteAll();
 
