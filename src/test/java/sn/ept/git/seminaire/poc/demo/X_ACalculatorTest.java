@@ -89,8 +89,8 @@ class X_ACalculatorTest {
     @MethodSource("addTestData")
     void addWithRandomInputsShouldReturnCorrectValue(double a, double b) {
         expected = a + b;
-        double result = calculator.add(a, b);
-        assertThat(result).isEqualTo(expected);
+        double resultat = calculator.add(a, b);
+        assertThat(resultat).isEqualTo(expected);
     }
 
     static Stream<Arguments> addTestData() {
