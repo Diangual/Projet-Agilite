@@ -54,43 +54,32 @@ class X_ACalculatorTest {
 
     @Test
     void multiplyShouldReturnCorrectResult() {
-        //Arrange
         expected = a * b;
-        //Act
         result = calculator.multiply(a, b);
-        //Assert
         assertThat(result).isEqualTo(expected);
     }
 
     @Test
     void divideShouldReturnCorrectResult() throws DivisionByZeroException {
-        //Arrange
         expected = a / b;
-        //Act
         result = calculator.divide(a, b);
-        //Assert
         assertThat(result).isEqualTo(expected);
     }
 
     @Test
     void divisionByZeroShouldThrowError() {
-        //Arrange
         b = 0;
-        //Assert
         Assertions.assertThrows(
                 DivisionByZeroException.class,
-                () -> calculator.divide(a, b)  //Act
+                () -> calculator.divide(a, b) 
         );
     }
 
 
     @RepeatedTest(value = 10)
     void testAddRepeated() {
-        //Arrange
         expected = a * 2;
-        //Act
         result = calculator.add(a, a);
-        //Assert
         assertThat(result).isEqualTo(expected);
     }
 
@@ -99,11 +88,8 @@ class X_ACalculatorTest {
     @ParameterizedTest
     @MethodSource("addTestData")
     void addWithRandomInputsShouldReturnCorrectValue(double a, double b) {
-        //Arrange
         expected = a + b;
-        //Act
         double result = calculator.add(a, b);
-        //Assert
         assertThat(result).isEqualTo(expected);
     }
 
@@ -119,13 +105,6 @@ class X_ACalculatorTest {
     }
 
 
-    /**
-     * Won't be run
-     */
-//   @Disabled
-//    @Test
-//    void testDisabled() {
-//        assertThat(Boolean.TRUE).isTrue();
-//    }
+
 
 }
