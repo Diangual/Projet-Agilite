@@ -43,8 +43,8 @@ class TodoExceptionHandlerTest {
 
     @Mock
     private WebRequest request;
-    private static final String desc = "request description";
-    private static final String msg = "error message";
+    private static final String DESC = "request description";
+    private static final String MSG = "error message";
     private ResponseEntity<ErrorModel> response;
     private final TodoExceptionHandler handler = new TodoExceptionHandler();
 
@@ -61,21 +61,21 @@ class TodoExceptionHandlerTest {
         response = null;
         Mockito
                 .when(request.getDescription(Mockito.anyBoolean()))
-                .thenReturn(desc);
+                .thenReturn(DESC);
     }
 
     @Test
     void testHandleNotFound() {
-        ItemNotFoundException exception = new ItemNotFoundException(msg);
+        ItemNotFoundException exception = new ItemNotFoundException(MSG);
         response = handler.notFound(exception, request);
-        verifyFormattedError(response, HttpStatus.NOT_FOUND, msg, desc);
+        verifyFormattedError(response, HttpStatus.NOT_FOUND, MSG, DESC);
     }
 
     @Test
     void testHandleConflict() {
-        ItemExistsException exception = new ItemExistsException(msg);
+        ItemExistsException exception = new ItemExistsException(MSG);
         response = handler.conflict(exception, request);
-        verifyFormattedError(response, HttpStatus.CONFLICT, msg, desc);
+        verifyFormattedError(response, HttpStatus.CONFLICT, MSG, DESC);
     }
 
 
@@ -83,7 +83,7 @@ class TodoExceptionHandlerTest {
     @MethodSource("argumentsOthersExceptions")
     void testOthersExceptions(Exception exception) {
         response = handler.othersExceptions(exception, request);
-        verifyFormattedError(response, HttpStatus.INTERNAL_SERVER_ERROR, msg, desc);
+        verifyFormattedError(response, HttpStatus.INTERNAL_SERVER_ERROR, MSG, DESC);
     }
 
 
@@ -100,13 +100,13 @@ class TodoExceptionHandlerTest {
     void testResponseStatusException(int status) {
         ResponseStatusException exception = new ResponseStatusException(HttpStatusCode.valueOf(status));
         response = handler.responseStatusException(exception, request);
-        verifyFormattedError(response, HttpStatus.resolve(status), exception.getMessage(), desc);
+        verifyFormattedError(response, HttpStatus.resolve(status), exception.getMessage(), DESC);
     }
 
     public static Stream<Arguments> argumentsOthersExceptions() {
         return Stream.of(
-                of(new Exception(msg)),
-                of(new RuntimeException(msg))
+                of(new Exception(MSG)),
+                of(new RuntimeException(MSG))
         );
     }
 
@@ -123,7 +123,7 @@ class TodoExceptionHandlerTest {
                 .thenReturn(List.of(fieldError));
 
         response = handler.invalideArgument(methodArgumentNotValidException, request);
-        verifyFormattedError(response, HttpStatus.BAD_REQUEST, TodoExceptionHandler.TEMPLATE_CHAMP_EN_ERREUR.formatted(field, message), desc);
+        verifyFormattedError(response, HttpStatus.BAD_REQUEST, TodoExceptionHandler.TEMPLATE_CHAMP_EN_ERREUR.formatted(field, message), DESC);
     }
 
 
@@ -133,7 +133,7 @@ class TodoExceptionHandlerTest {
         Mockito.when(methodArgumentNotValidException.getAllErrors())
                 .thenReturn(List.of(new ObjectError(field, message)));
         response = handler.invalideArgument(methodArgumentNotValidException, request);
-        verifyFormattedError(response, HttpStatus.BAD_REQUEST, message, desc);
+        verifyFormattedError(response, HttpStatus.BAD_REQUEST, message, DESC);
     }
 
 
@@ -147,7 +147,7 @@ class TodoExceptionHandlerTest {
     }
 
     private void verifyFormattedError(final ResponseEntity<ErrorModel> response, final HttpStatus httpStatus, final String message, final String description) {
-        Predicate<? super Object> messagePredicate = msg -> msg.toString().contains(message);
+        Predicate<? super Object> messagePredicate = MSG -> MSG.toString().contains(message);
         Predicate<? super Object> datePredicate = date -> {
             LocalDateTime now = LocalDateTime.now(Clock.systemUTC());
             LocalDateTime errorDate = (LocalDateTime) date;
@@ -185,9 +185,9 @@ class TodoExceptionHandlerTest {
 
     @Test
     void testValidationException() {
-        ValidationException exception = new ValidationException(msg);
+        ValidationException exception = new ValidationException(MSG);
         response = handler.violation(exception, request);
-        verifyFormattedError(response, HttpStatus.BAD_REQUEST, msg, desc);
+        verifyFormattedError(response, HttpStatus.BAD_REQUEST, MSG, DESC);
     }
 
 
