@@ -24,8 +24,7 @@ class FTDDTest {
             List<Integer> values, Integer expected
     ) {
         assertThat(Validator.sumOfSquaresOfEvenNumbers(values)).isEqualTo(expected);
-        //red
-        //green
+
     }
 
     static Stream<Arguments> argumentsSumOfSquaresOfEvenNumbers() {
@@ -42,24 +41,7 @@ class FTDDTest {
     }
 
 
-//    @ParameterizedTest
-//    @MethodSource("argumentsSumOfAbsoluteValues")
-//    void shouldReturnSumOfAbsoluteValues(
-//            List<Integer> values, Integer expected
-//    ) {
-//        assertThat(Validator.sumOfAbsoluteValues(values)).isEqualTo(expected);
-//    }
 
-
-//    static Stream<Arguments> argumentsSumOfAbsoluteValues() {
-//        return Stream.of(
-//                of( List.of(1,2,0,3),6),
-//                of( List.of(-1,-2,0,-3),6),
-//                of( List.of(10,10,10,-10,-10,-10),60),
-//                of( List.of(0,0,0),0),
-//                of( List.of(),0)
-//        );
-//    }
 
 
 
