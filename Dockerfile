@@ -1,36 +1,27 @@
-# Use an official OpenJDK 17 image as the base image
+# Utiliser une image officielle OpenJDK 17 comme image de base
 FROM openjdk:17-jdk-alpine
 
-# Set the working directory in the container to /app
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copy the pom.xml file
+# Installer Maven
+RUN apk add --no-cache maven
+
+# Copier les fichiers de projet dans le conteneur
 COPY pom.xml .
-
-# Set the environment variable M2_HOME and M2_REPO
-ENV M2_HOME /usr/share/maven
-ENV M2_REPO /usr/share/maven/repo
-
-# Copy the application code
 COPY src/ src/
 
-# Run the Maven command to build and package the application
+# Exécuter la commande Maven pour construire et empaqueter l'application
 RUN mvn clean package -DskipTests=true
 
-# Set the entrypoint to run the Java application
-ENTRYPOINT ["java", "-jar", "target/*.jar"]
+# Copier le fichier JAR résultant dans le conteneur
+COPY target/votre-application.jar /app/votre-application.jar
 
-# Expose the port that the application will use
-EXPOSE 8080
-
-# Set the user to use when running the container
-USER root
-
-# Create a new user and group with the same name as the group
+# Créer un groupe et un utilisateur pour exécuter l'application
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Make sure the spring user has ownership of all files in /app
-RUN chown -R spring:spring /app
+# Définir le groupe et l'utilisateur à utiliser lors de l'exécution du conteneur
+USER spring:spring
 
-# Make sure to use the correct permissions for the jar file
-RUN chmod 755 target/*.jar
+# Définir la commande d'entrée pour exécuter l'application
+CMD ["java", "-jar", "/app/projet-todos.jar"]
