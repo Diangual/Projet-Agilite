@@ -11,9 +11,6 @@ COPY pom.xml .
 ENV M2_HOME /usr/share/maven
 ENV M2_REPO /usr/share/maven/repo
 
-# Run the Maven command to download dependencies
-RUN mvn dependency:go-offline
-
 # Copy the application code
 COPY src/ src/
 
@@ -28,9 +25,6 @@ EXPOSE 8080
 
 # Set the user to use when running the container
 USER root
-
-# Set the group to use when running the container
-GROUP spring
 
 # Create a new user and group with the same name as the group
 RUN addgroup -S spring && adduser -S spring -G spring
