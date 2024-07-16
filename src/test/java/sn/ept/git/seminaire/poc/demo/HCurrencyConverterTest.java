@@ -22,8 +22,8 @@ import static org.junit.jupiter.params.provider.Arguments.of;
 @Slf4j
  class HCurrencyConverterTest {
 
-    private static final double coef = 1.25;
-    private static final double   value =12;
+    private static final double COEF = 1.25;
+    private static final double   VALUE =12;
     private static CurrencyConverter mockConverter;
     private  static CurrencyService mockCurrencyService;
     private  static CurrencyService  currencyService;
@@ -40,28 +40,28 @@ import static org.junit.jupiter.params.provider.Arguments.of;
 
     static Stream<Arguments> sameCurrenciesTestData() {
         return Stream.of(
-                of(Currency.USD, Currency.USD, value, value),
-                of(Currency.EURO, Currency.EURO, value, value),
-                of(Currency.XAF, Currency.XAF, value, value),
-                of(Currency.XOF, Currency.XOF, value, value)
+                of(Currency.USD, Currency.USD, VALUE, VALUE),
+                of(Currency.EURO, Currency.EURO, VALUE, VALUE),
+                of(Currency.XAF, Currency.XAF, VALUE, VALUE),
+                of(Currency.XOF, Currency.XOF, VALUE, VALUE)
         );
     }
 
 
     static Stream<Arguments> differentCurrenciesTestData() {
         return Stream.of(
-                of(Currency.USD, Currency.EURO, value, value*coef),
-                of(Currency.USD, Currency.XAF, value, value*coef),
-                of(Currency.USD, Currency.XOF, value, value*coef),
-                of(Currency.EURO, Currency.USD, value, value*coef),
-                of(Currency.EURO, Currency.XAF, value, value*coef),
-                of(Currency.EURO, Currency.XOF, value, value*coef),
-                of(Currency.XAF, Currency.USD, value, value*coef),
-                of(Currency.XAF, Currency.EURO, value, value*coef),
-                of(Currency.XAF, Currency.XOF, value, value*coef),
-                of(Currency.XOF, Currency.USD, value, value*coef),
-                of(Currency.XOF, Currency.EURO, value, value*coef),
-                of(Currency.XOF, Currency.XAF, value, value*coef)
+                of(Currency.USD, Currency.EURO, VALUE, VALUE*COEF),
+                of(Currency.USD, Currency.XAF, VALUE, VALUE*COEF),
+                of(Currency.USD, Currency.XOF, VALUE, VALUE*COEF),
+                of(Currency.EURO, Currency.USD, VALUE, VALUE*COEF),
+                of(Currency.EURO, Currency.XAF, VALUE, VALUE*COEF),
+                of(Currency.EURO, Currency.XOF, VALUE, VALUE*COEF),
+                of(Currency.XAF, Currency.USD, VALUE, VALUE*COEF),
+                of(Currency.XAF, Currency.EURO, VALUE, VALUE*COEF),
+                of(Currency.XAF, Currency.XOF, VALUE, VALUE*COEF),
+                of(Currency.XOF, Currency.USD, VALUE, VALUE*COEF),
+                of(Currency.XOF, Currency.EURO, VALUE, VALUE*COEF),
+                of(Currency.XOF, Currency.XAF, VALUE, VALUE*COEF)
         );
     }
 
@@ -78,7 +78,7 @@ import static org.junit.jupiter.params.provider.Arguments.of;
                    log.info(" >>> {} " , args[0]);
                    log.info(" >>> {} " , args[1]);
                    log.info(" >>> {} " , args[2]);
-                    return Double.parseDouble(args[2].toString()) * (args[0].equals(args[1]) ? 1 : coef);
+                    return Double.parseDouble(args[2].toString()) * (args[0].equals(args[1]) ? 1 : COEF);
                 });
 
     }
@@ -99,7 +99,6 @@ import static org.junit.jupiter.params.provider.Arguments.of;
     }
 
 
-    //this test will fail if CurrencyService does not work
     @ParameterizedTest
     @MethodSource("sameCurrenciesTestData")
     void _sameCurrentShouldReturnSameValue(Currency from, Currency to, double input, double expected) {
@@ -109,7 +108,6 @@ import static org.junit.jupiter.params.provider.Arguments.of;
 
 
 
-    //this test will fail if CurrencyService does not work
     @ParameterizedTest
     @MethodSource("differentCurrenciesTestData")
     void _differentCurrentShouldReturnDifferentValue(Currency from, Currency to, double input, double expected) {
