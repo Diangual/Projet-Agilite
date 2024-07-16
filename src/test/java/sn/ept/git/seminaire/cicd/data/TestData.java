@@ -8,7 +8,9 @@ import java.util.UUID;
 
 public class TestData {
 
-    public TestData() throws UnsupportedOperationException{}
+    public TestData() {
+        TestData();
+    }
 
     public static final class Default {
         private Default() {
