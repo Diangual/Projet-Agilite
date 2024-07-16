@@ -30,7 +30,7 @@ import static org.junit.jupiter.params.provider.Arguments.of;
     private static CurrencyConverter converter;
 
     @BeforeAll
-    public static void beforeAll() throws Exception {
+    public static void beforeAll() {
         mockCurrencyService = Mockito.mock(CurrencyService.class);
         mockConverter = new CurrencyConverter(mockCurrencyService);
 
@@ -66,7 +66,7 @@ import static org.junit.jupiter.params.provider.Arguments.of;
     }
 
     @BeforeEach
-    void beforeEach() throws IOException {
+    void beforeEach() {
         Mockito
                 .when(mockCurrencyService.convert(
                         ArgumentMatchers.any(Currency.class),
@@ -94,7 +94,7 @@ import static org.junit.jupiter.params.provider.Arguments.of;
     @ParameterizedTest
     @MethodSource("differentCurrenciesTestData")
      void differentCurrentShouldReturnDifferentValue(Currency from, Currency to, double input, double expected) {
-        double result = mockConverter.convert(from, to, input);
+        double result = mockConverter.convert(from, to, input) * 1;
         assertThat(result).isEqualTo(expected);
     }
 
