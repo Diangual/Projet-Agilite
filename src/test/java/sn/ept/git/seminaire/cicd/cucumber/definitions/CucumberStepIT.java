@@ -38,7 +38,7 @@ public class CucumberStepIT {
 
 
     public static final String COMPLETED = "completed";
-    private final String BASE_URI = "http://localhost";
+    private final String base_URL = "http://localhost";
     public static final String API_PATH = "/cicd/api/todos";
     public static final String ID = "id";
     public static final String TITLE = "title";
@@ -63,7 +63,7 @@ public class CucumberStepIT {
         todoRepository.deleteAll();
     }
     protected RequestSpecification request() {
-        RestAssured.baseURI = BASE_URI;
+        RestAssured.baseURI = base_URL;
         RestAssured.port = port;
         return given()
                 .contentType(ContentType.JSON)
