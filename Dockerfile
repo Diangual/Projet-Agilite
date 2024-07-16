@@ -12,7 +12,7 @@ COPY pom.xml .
 COPY src/ src/
 
 # Exécuter la commande Maven pour construire et empaqueter l'application
-RUN mvn clean package -DskipTests=true
+RUN mvn clean package -DskipTests=true --enable-preview
 
 # Copier le fichier JAR résultant dans le conteneur
 COPY target/*.jar /app/app.jar
