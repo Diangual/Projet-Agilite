@@ -127,8 +127,7 @@ class TodoServiceTest {
                     todo.setLastModifiedDate(now);
                     return todo;
                 });
-        //verifier que le titre n'est pas duplique
-        //ajouter la todo
+  
         TodoDTO saved  = service.save(dto);
 
         assertNotNull(saved);
