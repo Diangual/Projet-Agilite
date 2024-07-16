@@ -3,7 +3,6 @@ package sn.ept.git.seminaire.cicd.handler;
 import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -146,7 +145,7 @@ class TodoExceptionHandlerTest {
         );
     }
 
-    private void verifyFormattedError(final ResponseEntity<ErrorModel> response, final HttpStatus httpStatus, final String message, final String description) {
+    private void verifyFormattedError(final ResponseEntity<ErrorModel> response, final HttpStatus httpStatus, final String message) {
         Predicate<? super Object> messagePredicate = msg -> MSG.toString().contains(message);
         Predicate<? super Object> datePredicate = date -> {
             LocalDateTime now = LocalDateTime.now(Clock.systemUTC());
