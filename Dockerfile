@@ -15,7 +15,7 @@ COPY src/ src/
 RUN mvn clean package -DskipTests=true
 
 # Copier le fichier JAR résultant dans le conteneur
-COPY target/votre-application.jar /app/votre-application.jar
+COPY target/*.jar /app/app.jar
 
 # Créer un groupe et un utilisateur pour exécuter l'application
 RUN addgroup -S spring && adduser -S spring -G spring
@@ -24,4 +24,4 @@ RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 
 # Définir la commande d'entrée pour exécuter l'application
-CMD ["java", "-jar", "/app/projet-todos.jar"]
+CMD ["java", "-jar", "/app/app.jar"]
