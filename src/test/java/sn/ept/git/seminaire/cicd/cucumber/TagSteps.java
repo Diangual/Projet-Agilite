@@ -45,7 +45,7 @@ public class TagSteps {
 
     @Then("I should receive a page of {int} tags")
     public void iShouldReceiveAPageOfTags(int expectedPageSize) {
-        assertThat(tagsResponse.getBody().getContent().size()).isEqualTo(expectedPageSize);
+        assertThat(tagsResponse.getBody().getContent().size()).assertThat(actual).hasSize(expected);
     }
 
     @Then("the total number of tags should be {int}")
