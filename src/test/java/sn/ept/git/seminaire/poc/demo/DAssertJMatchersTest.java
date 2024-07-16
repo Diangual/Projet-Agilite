@@ -61,8 +61,6 @@ class DAssertJMatchersTest {
         map.put("nom", "DIC 1");
         map.put("departement", "GIT");
 
-        //map.put("ecole", "EPT");
-        ///map.put("pays", "Senegal");
 
         assertThat(map)
                 .hasSize(2)
@@ -136,8 +134,7 @@ class DAssertJMatchersTest {
     @Test
     void test_directory() {
         File dir= Files.newTemporaryFolder();
-        //dir.setReadable(true);
-        //dir.setWritable(true);
+
         assertThat(dir)
                 .exists()
                 .isDirectory()
