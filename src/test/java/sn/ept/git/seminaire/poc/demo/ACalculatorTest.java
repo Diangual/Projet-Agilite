@@ -33,19 +33,16 @@ class ACalculatorTest {
 
     @Test
     void addShouldReturnCorrectResult() {
-//        a = 44;
-//        b = 11;
+
         expected = a + b;
         result = calculator.add(a, b);
-        // result = a + b (expected)
         assertThat(result)
                 .isEqualTo(expected);
     }
 
     @Test
     void substractShouldReturnCorrectResult() {
-        //        a = 44;
-//        b = 11;
+
         expected = a - b;
         result = calculator.subtract(a, b);
         assertThat(result).isEqualTo(expected);
@@ -53,8 +50,7 @@ class ACalculatorTest {
 
     @Test
     void multiplyShouldReturnCorrectResult() {
-        //        a = 44;
-//        b = 11;
+
         expected = a * b;
         result = calculator.multiply(a, b);
         assertThat(result).isEqualTo(expected);
@@ -62,8 +58,7 @@ class ACalculatorTest {
 
     @Test
     void divideShouldReturnCorrectResult() throws DivisionByZeroException {
-        //        a = 44;
-//        b = 11;
+
         expected = a / b;
         result = calculator.divide(a, b);
         assertThat(result).isEqualTo(expected);
@@ -82,7 +77,7 @@ class ACalculatorTest {
     @ParameterizedTest
     @MethodSource("multiplyTestData")
     void multiplyWithRandomInputsShouldReturnCorrectValue(double a, double b) {
-        expected = a * b;
+        expected = a * b * 1;
         result = calculator.multiply(a, b);
         assertThat(result).isEqualTo(expected);
     }
