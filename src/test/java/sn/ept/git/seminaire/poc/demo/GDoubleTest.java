@@ -14,7 +14,6 @@ import org.mockito.Mock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -23,7 +22,6 @@ import sn.ept.git.seminaire.poc.demo.calculator.ICalculator;
 import sn.ept.git.seminaire.poc.demo.exception.DivisionByZeroException;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
