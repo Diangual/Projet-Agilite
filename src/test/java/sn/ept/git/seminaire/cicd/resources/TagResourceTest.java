@@ -24,7 +24,7 @@ import sn.ept.git.seminaire.cicd.utils.UrlMapping;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TagResourceTest {
+class TagResourceTest {
 
     @Mock
     private ITagService service;
@@ -40,7 +40,7 @@ public class TagResourceTest {
     }
 
     @Test
-    public void testFindAll() throws Exception {
+    void testFindAll() throws Exception {
         when(service.findAll()).thenReturn(TagDTOTestData.getList());
         mockMvc.perform(get(UrlMapping.Tag.ALL))
                 .andExpect(status().isOk())
@@ -48,7 +48,7 @@ public class TagResourceTest {
     }
 
     @Test
-    public void testFindById() throws Exception {
+    void testFindById() throws Exception {
         TagDTO expected = TagDTOTestData.getSingle();
         when(service.findById(expected.getId())).thenReturn(Optional.of(expected));
         mockMvc.perform(get(UrlMapping.Tag.FIND_BY_ID, expected.getId()))
@@ -59,7 +59,7 @@ public class TagResourceTest {
     }
 
     @Test
-    public void testCreate() throws Exception {
+    void testCreate() throws Exception {
         TagDTO expected = TagDTOTestData.getNew();
         when(service.save(expected)).thenReturn(expected);
         mockMvc.perform(post(UrlMapping.Tag.ADD)
@@ -72,14 +72,14 @@ public class TagResourceTest {
     }
 
     @Test
-    public void testDelete() throws Exception {
+    void testDelete() throws Exception {
         when(service.deleteById("id")).thenReturn(Optional.empty());
         mockMvc.perform(delete(UrlMapping.Tag.DELETE + "/id"))
                 .andExpect(status().isNoContent());
     }
 
     @Test
-    public void testUpdate() throws Exception {
+    void testUpdate() throws Exception {
         TagDTO expected = TagDTOTestData.getUpdated();
         when(service.update("id", expected)).thenReturn(Optional.of(expected));
         mockMvc.perform(put(UrlMapping.Tag.UPDATE + "/id")
