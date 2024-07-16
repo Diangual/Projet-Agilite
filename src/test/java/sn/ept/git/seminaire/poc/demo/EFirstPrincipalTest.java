@@ -43,12 +43,7 @@ class EFirstPrincipalTest {
     }
 
 
-    /**
-     * Fast
-     * A developer should not hesitate to run the tests as they are slow; they should run very fast
-     * You should be aiming for many hundreds or thousands of tests per second.
-     * ===> Avoid depending on network or external services
-     */
+
     @Nested
     class Fast {
 
@@ -60,12 +55,7 @@ class EFirstPrincipalTest {
         }
     }
 
-    /**
-     * Isolation/Independent
-     * You can isolate them from interfering with one another
-     * No order-of-run dependency => They should pass or fail the same way in suite or when run individually.
-     * ===>  not test should prepare data for others
-     */
+
     @Nested
     @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
     class Isolation {
@@ -90,12 +80,6 @@ class EFirstPrincipalTest {
         }
     }
 
-    /**
-     * Repeatable
-     * No matter how often or where you run it, it should produce the same result (Deterministic results ).
-     * Each test should set up or arrange its own data.
-     * ===>  What if a set of tests need some common data? Use Data Helper classes that can setup this data for re-usability.
-     */
     @Nested
     class Repeatable {
 
@@ -124,27 +108,18 @@ class EFirstPrincipalTest {
 
     }
 
-    /**
-     * SelfValidating
-     * what it means is that running your test leaves it perfectly clear whether it passed or failed.
-     * JUnit does this and fails with red, which lets you red-green-refactor.
-     * By using a testing framework like JUnit, utilizing assertion libraries, and writing specific tests,
-     * you can ensure that if a test fails, there will be clear and unambiguous reporting that tells
-     * you exactly what passed or failed.
-     */
+
     @Nested
     @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
     class SelfValidating {
 
         @Test
         void addShouldReturnTheSumOfTwoPositiveNumbers() {
-            //arrange
             a = 10;
             b = 34;
             double expected = a + b;
-            //act
+ 
             resultTwo = calculator.add(b, a);
-            //assert
             assertThat(resultTwo)
                     .as("Les deux resultats doivent etre egaux")
                     .isEqualTo(expected);
@@ -153,7 +128,6 @@ class EFirstPrincipalTest {
 
         @Test
         void addShouldReturnTheSumOfTwoNegativeNumbers() {
-            //  double expected = a+b;
             double expected = -(a + b);
             resultTwo = calculator.add(-b, -a);
             assertThat(resultTwo).isEqualTo(expected);
@@ -163,20 +137,7 @@ class EFirstPrincipalTest {
     }
 
 
-    /**
-     * ThoroughAndTimely
-     * ==> Timely
-     * Practically, You can write unit tests at any time.
-     * You can wait up to code is production-ready or you’re better off focusing on writing unit tests in a timely fashion.
-     * The idea was that your tests should be written as close to when you write your code as possible (TDD: Before the code).
-     * ==>  Thorough (exhaustive)
-     * Should cover every use case scenario and NOT just aim for 100% coverage.
-     * Tests for large data sets - this will test runtime and space complexity.
-     * Tests for security with users having different roles - behavior may be different based on user's role.
-     * Tests for large values - overflow and underflow errors for data types like integer.
-     * Tests for exceptions and errors.
-     * Tests for illegal arguments or bad inputs.
-     */
+
     @Nested
     @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
     class ThoroughAndTimely {
@@ -191,232 +152,7 @@ class EFirstPrincipalTest {
         Operator result;
 
 
-//
-//        @Test
-//        void getMobileOperator_withPlusIndicatifAnd77_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "77";
-//            phone = template.formatted(indicatif, operator, groupe7Chifffres);
-//            //phone =+221779876543
-//
-//            //ACT
-//             result = Validator.getSnMobileOperator(phone);
-//             //ASSERT
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withPlusIndicatifAnd78_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "78";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_with00IndicatifAnd77_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "00221";
-//            operator = "77";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_with00IndicatifAnd78_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "00221";
-//            operator = "78";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withoutIndicatifAnd77_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "";
-//            operator = "77";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withoutIndicatifAnd78_shouldReturnOrange() throws BadPhoneException {
-//            indicatif = "";
-//            operator = "78";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.ORANGE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withPlusIndicatifAnd76_shouldReturnFree() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "76";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.FREE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_with00IndicatifAnd76_shouldReturnFree() throws BadPhoneException {
-//            indicatif = "00221";
-//            operator = "76";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.FREE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withoutIndicatifAnd76_shouldReturnFree() throws BadPhoneException {
-//            indicatif = "";
-//            operator = "76";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.FREE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withPlusIndicatifAnd70_shouldReturnExpresso() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "70";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.EXPRESSO);
-//        }
-//
-//        @Test
-//        void getMobileOperator_with00IndicatifAnd70_shouldReturnExpresso() throws BadPhoneException {
-//            indicatif = "00221";
-//            operator = "70";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.EXPRESSO);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withoutIndicatifAnd70_shouldReturnExpresso() throws BadPhoneException {
-//            indicatif = "";
-//            operator = "70";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.EXPRESSO);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withPlusIndicatifAnd75_shouldReturnPromobile() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "75";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.PROMOBILE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_with00IndicatifAnd75_shouldReturnPromobile() throws BadPhoneException {
-//            indicatif = "00221";
-//            operator = "75";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.PROMOBILE);
-//        }
-//
-//        @Test
-//        void getMobileOperator_withoutIndicatifAnd75_shouldReturnPromobile() throws BadPhoneException {
-//            indicatif = "";
-//            operator = "75";
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            result = Validator.getSnMobileOperator(phone);
-//            assertThat(result).isEqualTo(Operator.PROMOBILE);
-//        }
-//
-//
-//
-//        //jeu avec les mauvais numeros
-//        @Test
-//        void getMobileOperator_withBadIndicatif_shouldThrowError() throws BadPhoneException {
-//            indicatif = "+222";
-//            operator = "77";
-//            //+222 77 987 65 43
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
-//
-//        @Test
-//        void getMobileOperator_withBadOperator_shouldThrowError() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "79";
-//            //+221 79 987 65 43
-//            phone = template.formatted( indicatif, operator, groupe7Chifffres);
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
-//
-//        @Test
-//        void getMobileOperator_withNumberLessThan7digits_shouldThrowError() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "77";
-//            String nouveauGroupe6Chifffres = "987654";
-//            //+221 77 987 65 4
-//            phone = String.format(template, indicatif, operator, nouveauGroupe6Chifffres);
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
-//
-//        @Test
-//        void getMobileOperator_withNumberMorThan7digits_shouldThrowError() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "77";
-//            String nouveauGroupe8Chifffres = "98765432";
-//            //+221 77 987 65 43 2
-//            phone = String.format(template, indicatif, operator, nouveauGroupe8Chifffres);
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
-//
-//        @Test
-//        void getMobileOperator_withBadNumber_shouldThrowError() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "77";
-//            String nouveauGroupe7Chifffres = "987n543";
-//            phone = String.format(template, indicatif, operator, nouveauGroupe7Chifffres);
-//            //+221 77 987 n5 43
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
-//
-//
-//        @Test
-//        void ousmane() throws BadPhoneException {
-//            indicatif = "+221";
-//            operator = "";
-//            String nouveauGroupe7Chifffres = "9876543";
-//            phone = String.format(template, indicatif, operator, nouveauGroupe7Chifffres);
-//            //+221 987 65 43
-//            assertThrows(
-//                    BadPhoneException.class,
-//                    () -> Validator.getSnMobileOperator(phone)
-//            );
-//        }
 
-
-// FAMILLE DES NUMERO VALIDE
-// FAMILLE DES NUMEROS INVALIDES
-
-
-        //happy paths
         static Stream<Arguments> argumentsValideMobilePhone() {
             return Stream.of(
                     Arguments.of("+221", "77", Operator.ORANGE),
@@ -462,7 +198,6 @@ class EFirstPrincipalTest {
         void getMobileOperator_shouldThrowException(
                 String indicatif, String codeOperateur, String dernierGroupe
         ) {
-            //Arrange
             phone = template.formatted(indicatif, codeOperateur, dernierGroupe);
             //Act and Assert
             assertThrows(
@@ -472,7 +207,6 @@ class EFirstPrincipalTest {
         }
 
 
-        //sad paths
         static Stream<Arguments> argumentsInvalideMobilePhone() {
             return Stream.of(
                     Arguments.of("+222", "70", "9876543"),
